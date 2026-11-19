@@ -365,6 +365,220 @@
       ],
       "site_fulltext": false,
       "syndicate_fulltext": false
+    },
+    {
+      "participation_mode": "editorial",
+      "interval_minutes": 1440,
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true,
+      "id": "rss-arxiv-robotics",
+      "name": "arXiv · 具身与机器人论文",
+      "kind": "rss",
+      "tier": "T2",
+      "owner_entity_id": null,
+      "config": {
+        "_aihot": {
+          "initialBackfillLimit": 6,
+          "initialBackfillMonths": 12
+        },
+        "feedUrl": "https://rss.arxiv.org/rss/cs.RO",
+        "summaryIsBody": true,
+        "sortByPublishedAt": true,
+        "ingestNoiseFilter": {
+          "dropMarkers": [
+            ""
+          ],
+          "keepIfMatches": [
+            "vision-language-action",
+            "vision language action",
+            " vla",
+            "vla ",
+            "world model",
+            "world-model",
+            "humanoid",
+            "embodied",
+            "imitation learning",
+            "robot learning",
+            "robot manipulation",
+            "robotic manipulation",
+            "dexterous",
+            "mobile manipulation",
+            "autonomous driving",
+            "self-driving",
+            "end-to-end driving",
+            "robot navigation",
+            "robotic navigation",
+            "robot dataset",
+            "demonstration data",
+            "reinforcement learning"
+          ]
+        }
+      },
+      "tags": [
+        "论文",
+        "具身",
+        "机器人"
+      ]
+    },
+    {
+      "participation_mode": "editorial",
+      "interval_minutes": 720,
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true,
+      "id": "json-hf-embodied-papers",
+      "name": "Hugging Face Papers · 具身研究",
+      "kind": "json_list",
+      "tier": "T2",
+      "owner_entity_id": null,
+      "config": {
+        "_aihot": {
+          "initialBackfillLimit": 4,
+          "initialBackfillMonths": 12
+        },
+        "url": "https://huggingface.co/api/daily_papers",
+        "mode": "json_api",
+        "titlePaths": [
+          "paper.title"
+        ],
+        "summaryPaths": [
+          "paper.summary"
+        ],
+        "authorPaths": [
+          "paper.authors.0.name"
+        ],
+        "urlTemplate": "https://arxiv.org/abs/{paper.id}",
+        "externalIdPath": "paper.id",
+        "publishedAtPath": "paper.publishedAt",
+        "summaryIsBody": true,
+        "sortByPublishedAt": true,
+        "ingestNoiseFilter": {
+          "dropMarkers": [
+            ""
+          ],
+          "keepIfMatches": [
+            "vision-language-action",
+            "vision language action",
+            " vla",
+            "vla ",
+            "world model",
+            "world-model",
+            "humanoid",
+            "embodied",
+            "imitation learning",
+            "robot learning",
+            "robot manipulation",
+            "robotic manipulation",
+            "dexterous",
+            "mobile manipulation",
+            "autonomous driving",
+            "self-driving",
+            "end-to-end driving",
+            "robot navigation",
+            "robotic navigation",
+            "robot dataset",
+            "demonstration data",
+            "robotics",
+            "robotic",
+            "robots",
+            "robot policy",
+            "robot control"
+          ]
+        }
+      },
+      "tags": [
+        "论文",
+        "社区发现",
+        "具身"
+      ]
+    },
+    {
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true,
+      "id": "rss-nvidia-robotics",
+      "name": "NVIDIA Developer · Robotics",
+      "kind": "rss",
+      "tier": "T1",
+      "owner_entity_id": "nvidia",
+      "config": {
+        "_aihot": {
+          "initialBackfillLimit": 4,
+          "initialBackfillMonths": 12
+        },
+        "feedUrl": "https://developer.nvidia.com/blog/category/robotics/feed/",
+        "sortByPublishedAt": true
+      },
+      "tags": [
+        "官方",
+        "机器人",
+        "工程"
+      ]
+    },
+    {
+      "participation_mode": "editorial",
+      "interval_minutes": 1440,
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true,
+      "id": "web-waymo-research",
+      "name": "Waymo Research · 自动驾驶研究",
+      "kind": "web_list",
+      "tier": "T1",
+      "owner_entity_id": "waymo",
+      "config": {
+        "_aihot": {
+          "initialBackfillLimit": 4,
+          "initialBackfillMonths": 12
+        },
+        "url": "https://waymo.com/research/",
+        "parseMode": "html",
+        "itemSelector": "li[data-slot=\"filterable\"]:has(h3 a[href^=\"/research/\"]):lt(8)",
+        "linkSelector": "a[href^=\"https://arxiv.org/abs/\"]",
+        "titleSelector": "h3 a[href^=\"/research/\"]",
+        "allowUrlPrefixes": [
+          "https://arxiv.org/abs/"
+        ],
+        "detail": {
+          "maxFetches": 4,
+          "publishedAtSelector": "meta[name=\"citation_date\"]",
+          "publishedAtUtcOffset": "+00:00",
+          "summarySelector": "blockquote.abstract"
+        }
+      },
+      "tags": [
+        "官方",
+        "论文",
+        "自动驾驶"
+      ]
+    },
+    {
+      "participation_mode": "editorial",
+      "interval_minutes": 360,
+      "site_fulltext": false,
+      "syndicate_fulltext": false,
+      "enabled": true,
+      "id": "rss-ieee-robotics",
+      "name": "IEEE Spectrum · Robotics",
+      "kind": "rss",
+      "tier": "T2",
+      "owner_entity_id": null,
+      "config": {
+        "_aihot": {
+          "initialBackfillLimit": 4,
+          "initialBackfillMonths": 12
+        },
+        "feedUrl": "https://spectrum.ieee.org/feeds/topic/robotics.rss",
+        "sortByPublishedAt": true
+      },
+      "tags": [
+        "媒体",
+        "机器人",
+        "产业"
+      ]
     }
   ]
 }

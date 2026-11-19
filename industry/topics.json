@@ -2,21 +2,135 @@
   "groups": [
     {
       "key": "company",
-      "name": "公司与模型",
-      "blurb": "按厂商追踪模型、产品与公司动态"
+      "name": "公司与机构",
+      "blurb": "按机器人公司、自动驾驶公司和研究机构追踪动态"
     },
     {
       "key": "field",
       "name": "技术方向",
-      "blurb": "按技术领域深挖：Agent、多模态、具身智能……"
+      "blurb": "按 VLA、世界模型、具身数据、导航与自动驾驶深挖"
     },
     {
       "key": "genre",
       "name": "内容类型",
-      "blurb": "按体裁浏览：论文、教程、观点、政策……"
+      "blurb": "按论文、开源方法、产业动态和评测浏览"
     }
   ],
   "topics": [
+    {
+      "slug": "embodied",
+      "name": "具身智能",
+      "group": "field",
+      "tags": [
+        "具身智能"
+      ],
+      "definition": "人形机器人、机器人操作、具身基础模型和真实环境中的感知、决策与控制。"
+    },
+    {
+      "slug": "figure",
+      "name": "Figure AI",
+      "group": "company",
+      "entityId": "figure",
+      "definition": "Figure AI 的人形机器人、自动化部署和具身模型进展。"
+    },
+    {
+      "slug": "unitree",
+      "name": "宇树 Unitree",
+      "group": "company",
+      "entityId": "unitree",
+      "definition": "宇树 Unitree 的人形机器人、四足机器人和产品落地动态。"
+    },
+    {
+      "slug": "physical-intelligence",
+      "name": "Physical Intelligence",
+      "group": "company",
+      "entityId": "physical-intelligence",
+      "definition": "Physical Intelligence 的 VLA、π0 系列和机器人通用策略研究。"
+    },
+    {
+      "slug": "waymo",
+      "name": "Waymo",
+      "group": "company",
+      "entityId": "waymo",
+      "definition": "Waymo 的自动驾驶系统、无人车运营和安全研究。"
+    },
+    {
+      "slug": "nvidia",
+      "name": "NVIDIA 英伟达",
+      "group": "company",
+      "entityId": "nvidia",
+      "definition": "NVIDIA 的机器人平台、仿真与训练工具、自动驾驶技术和机器人算力生态。"
+    },
+    {
+      "slug": "tesla",
+      "name": "Tesla / Optimus / FSD",
+      "group": "company",
+      "entityId": "tesla",
+      "definition": "Tesla 的 Optimus、人形机器人、FSD 和自动驾驶进展。"
+    },
+    {
+      "slug": "vla",
+      "name": "VLA",
+      "group": "field",
+      "tags": [
+        "VLA"
+      ],
+      "definition": "视觉语言动作模型、机器人策略泛化、跨任务控制和真实世界执行。"
+    },
+    {
+      "slug": "world-models",
+      "name": "世界模型",
+      "group": "field",
+      "tags": [
+        "世界模型"
+      ],
+      "definition": "用于预测、规划、仿真和控制的世界模型及其在机器人和自动驾驶中的应用。"
+    },
+    {
+      "slug": "embodied-data",
+      "name": "具身数据",
+      "group": "field",
+      "tags": [
+        "具身数据"
+      ],
+      "definition": "机器人轨迹、视频动作数据、数据采集、数据引擎、合成数据和数据质量。"
+    },
+    {
+      "slug": "autonomous-driving",
+      "name": "自动驾驶",
+      "group": "field",
+      "tags": [
+        "自动驾驶"
+      ],
+      "definition": "自动驾驶感知、预测、规划、控制、端到端系统和无人车运营。"
+    },
+    {
+      "slug": "reinforcement-learning",
+      "name": "强化学习",
+      "group": "field",
+      "tags": [
+        "强化学习"
+      ],
+      "definition": "用于机器人和自动驾驶的强化学习、奖励建模、策略优化和 sim-to-real。"
+    },
+    {
+      "slug": "imitation-learning",
+      "name": "模仿学习",
+      "group": "field",
+      "tags": [
+        "模仿学习"
+      ],
+      "definition": "行为克隆、离线模仿学习、示范数据和从人类操作中学习。"
+    },
+    {
+      "slug": "navigation",
+      "name": "导航与移动操作",
+      "group": "field",
+      "tags": [
+        "导航"
+      ],
+      "definition": "机器人导航、移动操作、定位建图、路径规划和复杂环境中的自主移动。"
+    },
     {
       "slug": "openai",
       "name": "OpenAI / ChatGPT",
@@ -60,7 +174,9 @@
       "name": "月之暗面 / Kimi",
       "group": "company",
       "entityId": "kimi",
-      "aliases": ["Kimi / 月之暗面"],
+      "aliases": [
+        "Kimi / 月之暗面"
+      ],
       "definition": "月之暗面的 Kimi 产品更新、K 系列开源模型与长文本技术进展。"
     },
     {
@@ -97,13 +213,6 @@
       "group": "company",
       "entityId": "microsoft",
       "definition": "微软的 Copilot 系列产品、Azure AI 云服务，以及与 OpenAI 的合作动向。"
-    },
-    {
-      "slug": "nvidia",
-      "name": "NVIDIA 英伟达",
-      "group": "company",
-      "entityId": "nvidia",
-      "definition": "英伟达的 GPU 新品、CUDA 软件生态、机器人平台与 AI 算力供需。"
     },
     {
       "slug": "hugging-face",
@@ -190,15 +299,6 @@
       "definition": "AI 语音与音频：语音合成、实时语音对话、音乐生成与音频理解的模型与产品。"
     },
     {
-      "slug": "embodied",
-      "name": "具身智能",
-      "group": "field",
-      "tags": [
-        "具身智能"
-      ],
-      "definition": "装进机器人身体里的 AI：人形机器人、具身基础模型，以及在真实环境里动手干活的能力。"
-    },
-    {
       "slug": "on-device",
       "name": "端侧 AI",
       "group": "field",
@@ -215,7 +315,7 @@
         "开源生态",
         "开源/仓库"
       ],
-      "definition": "开放权重、能下载下来自己部署的模型，开源框架与 GitHub 上爆火的 AI 项目。"
+      "definition": "具身智能与自动驾驶可获取的代码、模型权重、数据集和复现实验。"
     },
     {
       "slug": "engineering",
@@ -276,9 +376,10 @@
       "name": "论文研究",
       "group": "genre",
       "tags": [
-        "论文/研究"
+        "论文/研究",
+        "研究"
       ],
-      "definition": "值得读的 AI 论文与研究成果：架构创新、训练方法、能力测量与理论进展。"
+      "definition": "具身智能、导航与自动驾驶的论文、技术报告、基准、数据集与研究发现。"
     },
     {
       "slug": "benchmarks",
@@ -321,9 +422,10 @@
       "name": "行业动态",
       "group": "genre",
       "tags": [
-        "行业动态"
+        "行业动态",
+        "产业"
       ],
-      "definition": "AI 圈的商业大事：融资并购、人事变动、合作与竞争、政策与市场变化。"
+      "definition": "机器人与自动驾驶公司的产品落地、量产部署、合作、融资并购与监管变化。"
     },
     {
       "slug": "policy",

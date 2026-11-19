@@ -20,30 +20,30 @@ export const EDITION_WHEN = {
 
 export const SITE = {
   /** 站名：导航、页面标题、分享图、RSS、MCP、后台都用它。 */
-  name: "MyHOT",
+  name: "具身Hot",
   /**
    * 行业词：拼进默认说法里，比如“AI 日报”“AI 动态”。
    * 改成“法律”“HR”“黄金”之类，页面上就会变成“法律日报”“法律动态”。
    */
-  subject: "AI",
+  subject: "具身",
   /** 首页的完整标题（浏览器标签、搜索结果）。 */
-  homeTitle: "MyHOT — AI 行业动态 · 每日精选与日报",
+  homeTitle: "具身Hot — 人形机器人、VLA 与自动驾驶行业动态",
   /** 主题目录页（/topics）的标题。 */
-  topicsTitle: "AI 主题：公司与模型、技术方向、内容形态的最新动态",
+  topicsTitle: "具身智能主题：VLA、世界模型、具身数据与产业动态",
   /** 反馈表单输入框里的示例。 */
-  feedbackExample: "例如：我在搜索某个关键词时遇到……我原本想……",
+  feedbackExample: "例如：我想追踪某个机器人公司或 VLA 方法，但没有找到对应主题……",
   /** 反馈页标题下面的一句话。 */
   feedbackLead: "发现 bug、想要的功能、看不顺眼的地方，都可以告诉我们。",
   /** 反馈表单邮箱框里的提示。 */
   feedbackEmailHint: "留下邮箱，我们可以回信联系你",
   /** 一句话介绍：搜索引擎、分享卡片、RSS、llms.txt 会用。 */
-  description: `从一批 AI 信源里挑出值得看的动态，把同一件事的多篇报道归到一起，${EDITION_WHEN.daily} 出一份日报。`,
+  description: `从具身智能、机器人和自动驾驶信源里挑出值得看的研究与产业动态，把同一件事的多篇报道归到一起，${EDITION_WHEN.daily} 出一份日报。`,
   /** llms.txt 里一句话介绍下面的一段详细介绍（选填）。 */
   llmsIntro: null as string | null,
   /** 一行小字：分享图、海报下方。 */
-  tagline: "值得关注的 AI 动态",
+  tagline: "值得关注的具身智能动态",
   /** 搜索引擎读到的关键词（首页结构化数据）。 */
-  keywords: ["AI 资讯", "AI 新闻", "AI 日报", "AI 行业动态"] as string[],
+  keywords: ["具身智能", "人形机器人", "VLA", "世界模型", "自动驾驶", "具身数据", "机器人日报"] as string[],
   /**
    * 搜索引擎站长平台的网站验证（选填）：meta 名 → 平台给的验证码，放在首页的 head 里。
    * 比如 "baidu-site-verification": "codeva-…"、"msvalidate.01": "…"。验证通过后也要留着，平台会定期复查。
@@ -70,23 +70,23 @@ export const SITE = {
   /** 对外联系邮箱（选填）：llms.txt 和给 Agent 的使用说明里会写。 */
   contactEmail: null as string | null,
   /** 关于页底部的一行小字（选填）。 */
-  footerNote: "由 AIHOT 开源框架驱动",
+  footerNote: "研究与产业动态聚合站",
   /** 中国大陆网站的 ICP 备案号（选填），填了就显示在侧栏底部和“我的”页底部，并链接到工信部备案系统。 */
   icp: null as string | null,
   /** 中国大陆网站的公安备案信息（选填），填了显示在侧栏底部和“我的”页底部。 */
   psb: null as string | null,
   /** 源码的 GitHub 仓库地址（选填），填了就在侧栏底部和“我的”页底部显示“GitHub 开源”。 */
   github: null as string | null,
-  /** 页脚的“由 X 驱动”（选填）：填了就在侧栏底部和“我的”页底部显示，链到它的网址。默认链回上游 AIHOT，不想要就写 null。 */
-  poweredBy: { name: "AIHOT", url: "https://aihot.news" } as { name: string; url: string } | null,
+  /** 页脚的“由 X 驱动”（选填）：填了就在侧栏底部和“我的”页底部显示，链到它的网址。默认链回上游项目，不想要就写 null。 */
+  poweredBy: null as { name: string; url: string } | null,
   /** 结构化数据里的网站运营者（搜索引擎用）。 */
   organization: {
-    name: "MyHOT",
+    name: "具身Hot",
     /** 创始人（选填）。 */
     founder: null as Founder | null,
   },
   /** 抓取信源时报上的名字和版本（User-Agent 里用），不要冒用别的站。 */
-  crawlerName: "MyHOTBot/1.0",
+  crawlerName: "EmbodiedHotBot/1.0",
 } as const;
 
 /** 使用规则和隐私说明两页（正文在 pages/ 里）。 */
@@ -154,15 +154,15 @@ export const ABOUT = {
   /** 页面描述（搜索结果、分享卡片）。 */
   description: `关于 ${SITE.name}：${SITE.description}`,
   /** 大标题：第一行正常颜色，第二行强调色。 */
-  headline: ["AI 圈每天都有新动静，", "值得看的，只有几条。"] as [string, string],
+  headline: ["具身智能每天都有新进展，", "值得看的，只有几条。"] as [string, string],
   /** 标题下面的一段话。{sources} 会换成实时的信源数（两边自动加空格，所以 {sources} 两边不写空格）；统计没取到时换成 sourcesFallback。 */
-  lead: `${SITE.name} 替你盯着{sources}个信源：抓取、归并、打分、精选，${EDITION_WHEN.daily} 出一份日报。免费，不用注册。`,
-  sourcesFallback: "十几",
+  lead: `${SITE.name} 替你盯着{sources}个信源：抓取、归并、打分、精选，优先筛出 VLA、世界模型、具身数据、自动驾驶研究和重点公司动态，${EDITION_WHEN.daily} 出一份日报。免费，不用注册。`,
+  sourcesFallback: "现有",
   /** 信源河动画下面的四个环节。 */
   steps: {
-    collect: "官方博客、媒体和个人的订阅源都在看；更新越勤的源看得越勤，最快 15 分钟看一次。",
+    collect: "研究机构、机器人公司、自动驾驶团队和专业媒体的订阅源都在看；更新越勤的源看得越勤，最快 15 分钟看一次。",
     store: "抓到的都存下来，同一件事的报道归到一起，热点榜就是从这里算出来的。",
-    select: `模型先看是不是这个行业的事、有没有实际信息，再写中文标题、摘要和${ITEM_COPY.reasonLabel}；营销稿和重复转发进不来。`,
+    select: `模型先判断是否与具身智能相关、证据是否可靠、是否有实质研究或产业变化，再写中文标题、摘要和${ITEM_COPY.reasonLabel}；低权威营销稿、泛泛观点和重复转发进不来。`,
     publish: `${EDITION_WHEN.daily} 出日报，${EDITION_WHEN.weekly} 出周报，${EDITION_WHEN.monthly} 出月报。`,
   },
   /**
@@ -196,7 +196,7 @@ export const ADMIN = {
 /** Agent 接入页的示例。 */
 export const AGENT = {
   /** MCP 工具表里“搜索”一行：能搜什么、可以怎么问。 */
-  search: { scope: "按公司、产品、人物或话题搜最近 7 天", ask: "这家公司最近发了什么？" },
+  search: { scope: "按公司、研究机构、技术方向或话题搜最近 7 天", ask: "最近有哪些 VLA、世界模型或人形机器人进展？" },
 };
 
 /** 日报、周报、月报版面上的说法。 */
